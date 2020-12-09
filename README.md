@@ -1,11 +1,15 @@
 # YoctoRaspberryPiExperiments
 Yocto Experiments for Raspberry Pi and Hopefully Useful Notes
-These are my notes on using Yocto to build images for a Raspberry Pi. I used an online course from [Udemy](https://www.udemy.com/course/yocto-zero-to-hero/) (because it was discounted) and some of this might qualify as course notes.
+These are my notes on using Yocto to build images for a Raspberry Pi. I used an online course from [Udemy](https://www.udemy.com/course/yocto-zero-to-hero/) (because it was discounted) and some of this might qualify as course notes. _**I make no specific recomendation regarding this course**_
 
 * **[Yocto Layers Repository](http://layers.openembedded.org/layerindex/branch/master/layers/)**
 * [Yocto Current Release Manuals](https://docs.yoctoproject.org/releases.html)
 * [Standard Images](https://www.yoctoproject.org/docs/1.8/ref-manual/ref-manual.html#ref-images)
 * export **BB_NUMBER_THREADS**=8  # twice the output of _cat /proc/cpuinfo | grep processor | wc -l_
+  * My system is a 4 Core i5 with 32GB. ```time bitbake ``` gives:
+  *   a real execution time of **73m52.588s** for a **Threads** of **4**
+  i   a real execution time of **73m19.041s** for a **Threads** of **6**
+  *   a real execution time of **73m27.084s** for a **Threads** of **8**
 * **bitbake clean**
   * **```bitbake -c clean <recipe-name>```** Removes all output files for a target from the do_unpack task forward
   * **```bitbake -c cleanall <recipe-name>```** Removes all output files, shared state (sstate) cache, and downloaded source files for a target.

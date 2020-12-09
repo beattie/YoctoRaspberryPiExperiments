@@ -1,7 +1,5 @@
 This README file contains information on the contents of the meta-uartconsole layer.
 
-Please see the corresponding sections below for details.
-
 Dependencies
 ============
 
@@ -15,13 +13,7 @@ Dependencies
   .
   .
 
-Patches
-=======
-
-Please submit any patches against the meta-uartconsole layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+Maintainer: Brian Beattie <beattie@beattie-home.net>
 
 Table of Contents
 =================
@@ -33,9 +25,9 @@ Table of Contents
 I. Adding the meta-uartconsole layer to your build
 =================================================
 
-Run 'bitbake-layers add-layer meta-uartconsole'
+Run 'bitbake-layers add-layer ${HOME}/<local repository>meta-uartconsole'
 
 II. Misc
 ========
+This layer adds a line to /boot/config.txt to enable a console on the UART
 
---- replace with specific information about the meta-uartconsole layer ---
