@@ -143,16 +143,26 @@ addtask after_deploy before do_build after do_install do_deploy
 ```
 Modify line added to conf/bblayers.conf to use **${LAYER_ROOT}**
 
----------------
-## Eclipse (WIP)
-Apparently development has stopped on the Eclipse Yocto plugin. Every set of instructions I have found is for Eclipse Luna, I'm running 2020-09 and Luna does not seem to want to run on my build Machine. I'm abandoning this for now.
+-----
+## Layers outside the yocto directory
+Using this github project clones to **~/Git/**, rather than copying files from the local repository, the layer can be referenced directly from _bblayers.conf_ file. ```bitbake-layers add-layer ${HOME}/meta-uartconsole```.
+
+## ssh server image
+```
+   $ . oe-init-build-env
+   $ bitbake-layers create-layer ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
+   $ cd ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
+   $ mkdir -p recipes-sshserver/image
+```
+Copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/conf_ to _conf_.
 
 ```
-   $ bitbake build-sysroots
-   $ bitbake meta-toolchain
+   $ bitbake sshserver-image
 ```
+
 
 ------
+
 ## Misc possibly obsolete notes
 
 ## Yocto Github projects
