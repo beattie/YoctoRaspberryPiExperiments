@@ -147,7 +147,7 @@ Modify line added to conf/bblayers.conf to use **${LAYER_ROOT}**
 ## Layers outside the yocto directory
 Using this github project clones to **~/Git/**, rather than copying files from the local repository, the layer can be referenced directly from _bblayers.conf_ file. ```bitbake-layers add-layer ${HOME}/meta-uartconsole```.
 
-## ssh server image
+## ssh server image (WIP not tested)
 ```
    $ . oe-init-build-env
    $ bitbake-layers create-layer ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
