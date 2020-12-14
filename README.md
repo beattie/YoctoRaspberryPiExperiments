@@ -190,4 +190,5 @@ If you clone from github you will still need to copy the files _bblayers.conf_ a
 * [Building 64-bit Systems for Raspberry PI 4 from Yocto](https://jumpnowtek.com/rpi/Raspberry-Pi-4-64bit-Systems-with-Yocto.html)
 * [Building GNU/Linux Distribution for Raspberry Pi Using the Yocto Project](https://www.instructables.com/Building-GNULinux-Distribution-for-Raspberry-Pi-Us/)
 * [Yocto for Raspberry pi 4 B 64 bit](https://ineclabs.com/yocto-for-raspberry-pi-64-bit/)
+* [How to add a new layer and a new recipe in Yocto](https://community.nxp.com/t5/i-MX-Processors-Knowledge-Base/How-to-add-a-new-layer-and-a-new-recipe-in-Yocto/ta-p/1102230)
 
