@@ -148,18 +148,22 @@ Modify line added to conf/bblayers.conf to use **${LAYER_ROOT}**
 Using this github project clones to **~/Git/**, rather than copying files from the local repository, the layer can be referenced directly from _bblayers.conf_ file. ```bitbake-layers add-layer ${HOME}/meta-uartconsole```.
 
 ## ssh server image (WIP not tested)
+An Openembedded layer meta-shellhub exists which handles must of what I plan better than this, but I want to work this example out.
+Below outlines how the layer was built, which is not needed if you clone from github both examples build on top of a build-minimal as above:
 ```
    $ . oe-init-build-env
    $ bitbake-layers create-layer ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
    $ cd ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
    $ mkdir -p recipes-sshserver/image
+   # edit conf/bblayers.conf and conf/layers.conf
 ```
-Copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/conf_ to _conf_.
+If you clone from github you will still need to copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/conf_ to _conf_.
+<font size="-1">_**If you put your repository in a different location you will need to edit bblayers.conf to reflect the actual location.**_</font>
 
 ```
    $ bitbake sshserver-image
 ```
-
+**TBD question** What are the implications of a _require_ line in a .bb file.
 
 ------
 
