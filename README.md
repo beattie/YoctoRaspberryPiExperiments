@@ -166,7 +166,7 @@ If you clone from github you will still need to copy the files _bblayers.conf_ a
 ```
    $ bitbake sshserver-image
 ```
-**TBD question** What are the implications of a _require_ line in a .bb file.
+For further detail of this image refer to the _README.md_ file in _meta-sshserver_
 
 ------
 
