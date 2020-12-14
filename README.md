@@ -157,7 +157,7 @@ Below outlines how the layer was built, which is not needed if you clone from gi
    $ mkdir -p recipes-sshserver/image
    # edit conf/bblayers.conf and conf/layers.conf
 ```
-If you clone from github you will still need to copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/conf_ to _conf_.
+If you clone from github you will still need to copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/image-conf_ to _conf_.
 <font size="-1">_**If you put your repository in a different location you will need to edit bblayers.conf to reflect the actual location.**_</font>
 
 ```
