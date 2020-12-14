@@ -15,5 +15,11 @@ IMAGE_INSTALL += "linux-firmware-bcm43430"
 # Add Network Manager
 IMAGE_INSTALL += "networkmanager networkmanager-bash-completion networkmanager-nmtui"
 
+# set a default password for root
+inherit extrausers
+EXTRA_USERS_PARAMS = "\
+    usermod -P yocto root; \
+"
+
 # remove old image
 RM_OLD_IMAGE = "1"
