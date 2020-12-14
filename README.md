@@ -153,10 +153,13 @@ Below outlines how the layer was built, which is not needed if you clone from gi
 ```
    $ . oe-init-build-env
    $ bitbake-layers create-layer ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
+   "edit conf bblayers.conf and local.conf"
    $ cd ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
    $ mkdir -p recipes-sshserver/image
-   # edit conf/bblayers.conf and conf/layers.conf
+   "create sshserver-image.bb"
 ```
+Rather than include the file contents in the **README** I will refer to the files in git.
+
 If you clone from github you will still need to copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/image-conf_ to _conf_.
 <font size="-1">_**If you put your repository in a different location you will need to edit bblayers.conf to reflect the actual location.**_</font>
 
