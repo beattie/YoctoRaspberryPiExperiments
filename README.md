@@ -27,7 +27,7 @@ Get yocto
    # "-b zeus" is for the zeus release branch
    $ git clone -b zeus git://git.yoctoproject.org/poky.git poky-minimal
    $ cd poky-minimal
-   $ git clone -b zeus git://git.openembedded.org/meta-openembedded
+   $ git clone -b zeus git://git.openembedded.org/meta-openembedded # not needed for minimal image
    $ git clone -b zeus git://git.yoctoproject.org/meta-raspberrypi
    $ . oe-init-build-env
 ```
