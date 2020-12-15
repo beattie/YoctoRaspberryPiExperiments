@@ -153,17 +153,20 @@ Below outlines how the layer was built, which is not needed if you clone from gi
 ```
    $ . oe-init-build-env
    $ bitbake-layers create-layer ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
+   "edit conf bblayers.conf and local.conf"
    $ cd ~/Git/YoctoRaspberryPiExperiments/meta-sshserver
    $ mkdir -p recipes-sshserver/image
-   # edit conf/bblayers.conf and conf/layers.conf
+   "create sshserver-image.bb"
 ```
-If you clone from github you will still need to copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/conf_ to _conf_.
+Rather than include the file contents in the **README** I will refer to the files in git.
+
+If you clone from github you will still need to copy the files _bblayers.conf_ and _local.conf_ from _~/Git/YoctoRaspberryPiExperiments/meta-sshserver/image-conf_ to _conf_.
 <font size="-1">_**If you put your repository in a different location you will need to edit bblayers.conf to reflect the actual location.**_</font>
 
 ```
    $ bitbake sshserver-image
 ```
-**TBD question** What are the implications of a _require_ line in a .bb file.
+For further detail of this image refer to the _README.md_ file in _meta-sshserver_
 
 ------
 
@@ -187,4 +190,5 @@ If you clone from github you will still need to copy the files _bblayers.conf_ a
 * [Building 64-bit Systems for Raspberry PI 4 from Yocto](https://jumpnowtek.com/rpi/Raspberry-Pi-4-64bit-Systems-with-Yocto.html)
 * [Building GNU/Linux Distribution for Raspberry Pi Using the Yocto Project](https://www.instructables.com/Building-GNULinux-Distribution-for-Raspberry-Pi-Us/)
 * [Yocto for Raspberry pi 4 B 64 bit](https://ineclabs.com/yocto-for-raspberry-pi-64-bit/)
+* [How to add a new layer and a new recipe in Yocto](https://community.nxp.com/t5/i-MX-Processors-Knowledge-Base/How-to-add-a-new-layer-and-a-new-recipe-in-Yocto/ta-p/1102230)
 
