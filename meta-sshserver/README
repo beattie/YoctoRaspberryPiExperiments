@@ -60,4 +60,4 @@ Install into the image:
    networkmanager networkmanager-bash-completion networkmanager-nmtui
 ```
 
-**ToDo** configure WiFi
+Bring up WiFi(still needs wpa-supplicant) add _recipes-sshserver/init-ifupdown/init-ifupdown_1.0.bbappend_, add (empty) _recipes-sshserver/wpa-supplicant/wpa-supplicant_2.9.bbappend
