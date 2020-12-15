@@ -5,37 +5,59 @@ Please see the corresponding sections below for details.
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
+  URI: git://git.yoctoproject.org/poky.git
+  branch: zeus
 
-  URI: <second dependency>
-  branch: <branch name>
+  URI: git://git.openembedded.org/meta-openembedded
+  branch: zeus
 
-  .
-  .
-  .
+  URI: git://git.yoctoproject.org/meta-raspberrypi
+  branch: zeus
 
 Patches
 =======
 
-Please submit any patches against the meta-sshserver layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
+Please submit any patches against the meta-sshserver layer to the maintainer:
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+Maintainer: Brian Beattie <beattie@beattie-home.net>
 
 Table of Contents
 =================
 
-  I. Adding the meta-sshserver layer to your build
- II. Misc
+  I. Building image-sshserver
+ II. Image Details
 
 
-I. Adding the meta-sshserver layer to your build
+I. Building image-sshserver
 =================================================
 
-Run 'bitbake-layers add-layer meta-sshserver'
+With git@github.com:beattie/YoctoRaspberryPiExperiments.git cloned into ~/Git get yocto:
+```
+   $ git clone -b zeus git://git.yoctoproject.org/poky.git poky-sshserver
+   $ cd poky-sshserver
+   $ git clone -b zeus git://git.openembedded.org/meta-openembedded
+   $ git clone -b zeus git://git.yoctoproject.org/meta-raspberrypi
+   $ . oe-init-build-env
+   $ cp ~/Git/YoctoRaspberryPiExperiments/meta-sshserver/image-conf/* conf
+   $ bitbake sshserver-image
+```
 
-II. Misc
+II. Image Details
 ========
+Details of changes to create the sshserver image.
 
---- replace with specific information about the meta-sshserver layer ---
+Add default password for root:
+```
+   inherit extrausers
+   EXTRA_USERS_PARAMS = "\
+       usermod -P yocto root; \
+   "
+```
+Install into the image:
+```
+   tzdata
+   linux-firmware-bcm43430
+   networkmanager networkmanager-bash-completion networkmanager-nmtui
+```
+
+**ToDo** configure WiFi
